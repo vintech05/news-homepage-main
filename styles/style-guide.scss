@@ -8,3 +8,22 @@ $Dark-grayish-blue: hsl(236, 13%, 42%);
 $Very-dark-blue: hsl(240, 100%, 5%);
 
 $f-size-paragraph: 15px;
+
+@mixin flex-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}

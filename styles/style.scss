@@ -1,7 +1,13 @@
+@import 'style-guide';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
 /* Box sizing rules */
 *,
 *::before,
 *::after {
+    
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -15,6 +21,7 @@ html {
 /* Remove default margin in favour of better control in authored CSS */
 body, h1, h2, h3, h4, p,
 figure, blockquote, dl, dd {
+    font-family: 'Inter', sans-serif;
     margin: 0;
 }
 
@@ -26,6 +33,9 @@ ol[role='list'] {
 
 /* Set core body defaults */
 body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-height: 100vh;
     line-height: 1.5;
 }
@@ -69,4 +79,161 @@ textarea:not([rows]) {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
     scroll-margin-block: 5ex;
+}
+
+.wrapper {
+    width: min(90%, 1000px);
+    margin-inline: auto;
+    display: grid; 
+    grid-template-columns: 1fr;
+
+    
+    grid-template-areas: 
+        'nav nav nav nav'
+        'main main main sidebar'
+        'footer footer footer footer';
+    
+ }
+   
+
+nav {
+    @include flex-row;
+    grid-area: nav;
+
+    .nav-list {
+        @include flex;
+        color: $Dark-grayish-blue;
+        gap: 2em;
+
+        & {
+            list-style: none;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        transition: all 200ms ease-in-out;
+
+        &:hover {
+            color: $soft-orange;
+        }
+    }
+}
+
+main {
+    grid-area: main;
+
+    .main-content {
+        @include flex-row;
+    }
+
+    .main-headline {
+        font-size: 3em;
+        font-weight: 800;
+    }
+
+    .main-headline__description {
+
+        color: $Dark-grayish-blue;
+        
+        & button {
+            background-color: $soft-red;
+            margin-top: 2em;
+            padding-inline: 2em;
+            padding-block: .75em;
+            cursor: pointer;
+            color: $Off-white;
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border: none;
+            outline: none;
+            transition: all 200ms ease-in-out;
+
+            &:hover {
+                background-color: $Very-dark-blue;
+            }
+        }
+    }
+}
+
+.sidebar {
+    grid-area: sidebar;
+    padding: 1em;
+    height: 30em;
+    background-color: $Very-dark-blue;
+
+    & span {
+        color: $soft-orange;
+        font-weight: 700;
+        font-size: 2em;
+    }
+
+    .sidebar-content {
+        padding-top: 2em;
+
+        & span {
+            color: $Off-white;
+            font-size: 1.2em;
+        }
+        
+        & p {
+            color: $Grayish-blue;
+            padding-bottom: 1em;
+        }
+        
+        &__1 {
+            border-bottom: 1px solid $Grayish-blue;
+            padding-bottom: .75em;
+        }
+        
+        &__2 {
+            padding-top: 2em;
+            border-bottom: 1px solid $Grayish-blue;
+            padding-bottom: .75em;
+        }
+        
+        &__3 {
+            padding-top: 2em;
+            padding-bottom: 2em;
+
+        }
+    }
+}
+
+.news {
+    grid-area: footer;
+    
+    .news-content {
+        @include flex;
+
+        &__1 {
+            @include flex;
+        }
+
+        &__2 {
+            @include flex;
+        }
+
+        &__3 {
+            @include flex;
+        }
+    }
+
+    .news-content__info {
+        @include flex-col;
+        text-align: left;
+        gap: 0;
+        
+        & span {
+            color: $Grayish-blue;
+            font-weight: 800;
+            font-size: 2em;
+        }
+
+        & p {
+            color: $Dark-grayish-blue;
+        }
+    }
 }

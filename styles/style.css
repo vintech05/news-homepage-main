@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap");
 /* Box sizing rules */
 *,
 *::before,
 *::after {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
@@ -15,6 +18,7 @@ html {
 /* Remove default margin in favour of better control in authored CSS */
 body, h1, h2, h3, h4, p,
 figure, blockquote, dl, dd {
+  font-family: "Inter", sans-serif;
   margin: 0;
 }
 
@@ -26,6 +30,9 @@ ol[role=list] {
 
 /* Set core body defaults */
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
   line-height: 1.5;
 }
@@ -70,4 +77,150 @@ textarea:not([rows]) {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
+}
+
+.wrapper {
+  width: min(90%, 1000px);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "nav nav nav nav" "main main main sidebar" "footer footer footer footer";
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-area: nav;
+}
+nav .nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+  color: hsl(236, 13%, 42%);
+  gap: 2em;
+}
+nav .nav-list {
+  list-style: none;
+}
+nav a {
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+nav a:hover {
+  color: hsl(35, 77%, 62%);
+}
+
+main {
+  grid-area: main;
+}
+main .main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main .main-headline {
+  font-size: 3em;
+  font-weight: 800;
+}
+main .main-headline__description {
+  color: hsl(236, 13%, 42%);
+}
+main .main-headline__description button {
+  background-color: hsl(5, 85%, 63%);
+  margin-top: 2em;
+  padding-inline: 2em;
+  padding-block: 0.75em;
+  cursor: pointer;
+  color: hsl(36, 100%, 99%);
+  font-size: 14px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  transition: all 200ms ease-in-out;
+}
+main .main-headline__description button:hover {
+  background-color: hsl(240, 100%, 5%);
+}
+
+.sidebar {
+  grid-area: sidebar;
+  padding: 1em;
+  height: 30em;
+  background-color: hsl(240, 100%, 5%);
+}
+.sidebar span {
+  color: hsl(35, 77%, 62%);
+  font-weight: 700;
+  font-size: 2em;
+}
+.sidebar .sidebar-content {
+  padding-top: 2em;
+}
+.sidebar .sidebar-content span {
+  color: hsl(36, 100%, 99%);
+  font-size: 1.2em;
+}
+.sidebar .sidebar-content p {
+  color: hsl(233, 8%, 79%);
+  padding-bottom: 1em;
+}
+.sidebar .sidebar-content__1 {
+  border-bottom: 1px solid hsl(233, 8%, 79%);
+  padding-bottom: 0.75em;
+}
+.sidebar .sidebar-content__2 {
+  padding-top: 2em;
+  border-bottom: 1px solid hsl(233, 8%, 79%);
+  padding-bottom: 0.75em;
+}
+.sidebar .sidebar-content__3 {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.news {
+  grid-area: footer;
+}
+.news .news-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+.news .news-content__1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+.news .news-content__2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+.news .news-content__3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+.news .news-content__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  text-align: left;
+  gap: 0;
+}
+.news .news-content__info span {
+  color: hsl(233, 8%, 79%);
+  font-weight: 800;
+  font-size: 2em;
+}
+.news .news-content__info p {
+  color: hsl(236, 13%, 42%);
 }/*# sourceMappingURL=style.css.map */
