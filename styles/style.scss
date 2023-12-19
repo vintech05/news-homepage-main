@@ -81,17 +81,18 @@ textarea:not([rows]) {
     scroll-margin-block: 5ex;
 }
 
-.wrapper {
-    width: min(90%, 1000px);
+.container {
+    width: min(90%, 2000px);
     margin-inline: auto;
     display: grid; 
-    grid-template-columns: 1fr;
-
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: .25fr 1fr 4fr;
+    grid-gap: 2em;
     
     grid-template-areas: 
-        'nav nav nav nav'
-        'main main main sidebar'
-        'footer footer footer footer';
+        'nav nav nav'
+        'main main sidebar'
+        'footer footer footer';
     
  }
    
@@ -125,21 +126,30 @@ main {
 
     .main-content {
         @include flex-row;
+
     }
 
     .main-headline {
         font-size: 3em;
         font-weight: 800;
+
+        & p {
+            width: 70%;
+        }
     }
 
+    #img-mobile {
+        display: none;
+    }
+    
     .main-headline__description {
-
         color: $Dark-grayish-blue;
-        
+        width: 70%;
+
         & button {
             background-color: $soft-red;
-            margin-top: 2em;
             padding-inline: 2em;
+            margin-top: 2em;
             padding-block: .75em;
             cursor: pointer;
             color: $Off-white;
@@ -161,7 +171,6 @@ main {
 .sidebar {
     grid-area: sidebar;
     padding: 1em;
-    height: 30em;
     background-color: $Very-dark-blue;
 
     & span {
@@ -180,6 +189,7 @@ main {
         
         & p {
             color: $Grayish-blue;
+            padding-top: 1em;
             padding-bottom: 1em;
         }
         
@@ -196,8 +206,6 @@ main {
         
         &__3 {
             padding-top: 2em;
-            padding-bottom: 2em;
-
         }
     }
 }
@@ -207,6 +215,7 @@ main {
     
     .news-content {
         @include flex;
+        gap: 2em;
 
         &__1 {
             @include flex;
@@ -234,6 +243,69 @@ main {
 
         & p {
             color: $Dark-grayish-blue;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        .main-headline {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        'nav'
+        'main'
+        'sidebar'
+        'footer';
+    }
+
+    .main-content {
+        @include flex-col;
+        text-align: left;
+    }
+
+    main {
+        text-align: left;
+
+        #img-desktop {
+            display: none;
+        }
+
+        #img-mobile {
+            display: block;
+        }
+
+        .main-headline {
+
+            & {
+                width: 100%;
+            }
+        }
+
+        .main-headline__description {
+            width: 100%;
+        }
+    }
+
+    .sidebar {
+
+        .sidebar-content {
+            & span {
+                padding-bottom: 2em;
+            }
+        }
+    }
+
+    .news {
+
+        .news-content {
+            @include flex-col;
         }
     }
 }
