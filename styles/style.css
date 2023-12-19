@@ -121,6 +121,7 @@ main .main-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 2em;
 }
 main .main-headline {
   font-size: 3em;
@@ -128,12 +129,14 @@ main .main-headline {
 }
 main .main-headline p {
   width: 70%;
+  line-height: 1.2;
 }
 main #img-mobile {
   display: none;
 }
 main .main-headline__description {
   color: hsl(236, 13%, 42%);
+  line-height: 1.5;
   width: 70%;
 }
 main .main-headline__description button {

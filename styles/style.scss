@@ -126,7 +126,7 @@ main {
 
     .main-content {
         @include flex-row;
-
+        padding-top: 2em;
     }
 
     .main-headline {
@@ -135,6 +135,7 @@ main {
 
         & p {
             width: 70%;
+            line-height: 1.2;
         }
     }
 
@@ -144,6 +145,7 @@ main {
     
     .main-headline__description {
         color: $Dark-grayish-blue;
+        line-height: 1.5;
         width: 70%;
 
         & button {
