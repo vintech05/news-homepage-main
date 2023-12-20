@@ -7,23 +7,32 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="/styles/style.css">
   <title>News homepage</title>
-
+  <script src="script.js" defer></script>
 </head>
 
 <body>
   <div class="wrapper">
+    <div class="overlay"></div>
     <div class="container">
       <nav>
         <div class="nav-logo">
           <img src="/assets/images/logo.svg" alt="nav-logo">
         </div>
-        <ul class="nav-list">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">New</a></li>
-          <li><a href="#">Popular</a></li>
-          <li><a href="#">Trending</a></li>
-          <li><a href="#">Categories</a></li>
-        </ul>
+        <div class="nav-menu">
+          <img src="/assets/images/icon-menu.svg" alt="icon-menu">
+        </div>
+        <div class="nav-list-wrapper">
+          <div class="nav-close">
+            <img id="img-nav-close" src="/assets/images/icon-menu-close.svg" alt="nav-close">
+          </div>
+          <ul class="nav-list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">New</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">Trending</a></li>
+            <li><a href="#">Categories</a></li>
+          </ul>
+        </div>
       </nav>
       <main>
         <img id="img-desktop" src="/assets/images/image-web-3-desktop.jpg" alt="image-web-3-desktop">
