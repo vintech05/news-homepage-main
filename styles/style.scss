@@ -95,7 +95,7 @@ textarea:not([rows]) {
     margin-inline: auto;
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: .25fr 1fr 4fr;
+    grid-template-rows: .25fr 1fr 1fr;
     grid-gap: 2em;
     
     grid-template-areas: 
@@ -103,8 +103,8 @@ textarea:not([rows]) {
         'main main sidebar'
         'footer footer footer';
     
- }
-   
+    }
+    
 
 nav {
     @include flex-row;
@@ -322,6 +322,7 @@ main {
             display: flex;
             position: absolute;
             right: 2em;
+            cursor: pointer;
             top: 5em;
         }
 
