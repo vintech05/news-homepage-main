@@ -137,22 +137,22 @@ main .main-content {
   align-items: center;
   justify-content: space-between;
   padding-top: 2em;
+  flex-shrink: 0;
 }
 main .main-headline {
-  font-size: 3em;
+  font-size: 2em;
   font-weight: 800;
 }
-main .main-headline p {
-  width: 70%;
+main .main-headline h1 {
   line-height: 1.2;
 }
 main #img-mobile {
   display: none;
 }
 main .main-headline__description {
+  width: 90%;
   color: hsl(236, 13%, 42%);
   line-height: 1.5;
-  width: 70%;
 }
 main .main-headline__description button {
   background-color: hsl(5, 85%, 63%);
@@ -257,7 +257,7 @@ main .main-headline__description button:hover {
     width: min(95%, 1000px);
   }
   main .main-headline {
-    width: 100%;
+    font-size: 1.5em;
   }
 }
 @media (width <= 820px) {

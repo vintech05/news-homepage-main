@@ -148,14 +148,14 @@ main {
     .main-content {
         @include flex-row;
         padding-top: 2em;
+        flex-shrink: 0;
     }
 
     .main-headline {
-        font-size: 3em;
+        font-size: 2em;
         font-weight: 800;
 
-        & p {
-            width: 70%;
+        & h1 {
             line-height: 1.2;
         }
     }
@@ -165,9 +165,9 @@ main {
     }
     
     .main-headline__description {
+            width: 90%;
         color: $Dark-grayish-blue;
         line-height: 1.5;
-        width: 70%;
 
         & button {
             background-color: $soft-red;
@@ -278,7 +278,7 @@ main {
 
     main {
         .main-headline {
-            width: 100%;
+            font-size: 1.5em;
         }
     }
 }
