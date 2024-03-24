@@ -95,7 +95,7 @@ textarea:not([rows]) {
     margin-inline: auto;
     display: grid; 
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: .25fr 1fr 1fr;
+    grid-template-rows: .25fr 1fr;
     grid-gap: 2em;
     
     grid-template-areas: 
@@ -108,6 +108,7 @@ textarea:not([rows]) {
 
 nav {
     @include flex-row;
+    margin-top: 2em;
     grid-area: nav;
 
     .nav-list {
@@ -321,9 +322,9 @@ main {
         .nav-close {
             display: flex;
             position: absolute;
-            right: 2em;
+            right: 1em;
             cursor: pointer;
-            top: 5em;
+            top: 2.5em;
         }
 
         .nav-menu {

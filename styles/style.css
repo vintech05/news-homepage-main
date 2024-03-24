@@ -93,7 +93,7 @@ textarea:not([rows]) {
   margin-inline: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 0.25fr 1fr 1fr;
+  grid-template-rows: 0.25fr 1fr;
   grid-gap: 2em;
   grid-template-areas: "nav nav nav" "main main sidebar" "footer footer footer";
 }
@@ -102,6 +102,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 2em;
   grid-area: nav;
 }
 nav .nav-list {
@@ -288,9 +289,9 @@ main .main-headline__description button:hover {
   nav .nav-close {
     display: flex;
     position: absolute;
-    right: 2em;
+    right: 1em;
     cursor: pointer;
-    top: 5em;
+    top: 2.5em;
   }
   nav .nav-menu {
     display: flex;
